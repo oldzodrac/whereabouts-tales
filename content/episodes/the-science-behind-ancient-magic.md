@@ -1,5 +1,7 @@
 ---
 title: The Science Behind Ancient Magic
+season: 2
+episode: 14
 date: 2026-01-02T13:26:00.000+01:00
 youtubeId: AkENWxSJrpE
 excerpt: "#0052"
