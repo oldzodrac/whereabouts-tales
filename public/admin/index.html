@@ -9,17 +9,27 @@
     </script>
   </head>
   <body>
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data && typeof event.data === 'string' && event.data.startsWith('authorization:github:success:')) {
+          const keyData = JSON.parse(event.data.split('authorization:github:success:')[1]);
+          localStorage.setItem("decap-cms-user", JSON.stringify({ backendName: "github", token: keyData.token }));
+          window.location.reload();
+        }
+      });
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
     <script>
       CMS.init({
         config: {
+          load_config_file: false, // THIS IS THE MAGIC FIX
           backend: {
             name: 'github',
-            repo: 'PaulPuscas/whereabouts-tales',
+            repo: 'oldzodrac/whereabouts-tales',
             branch: 'main',
             base_url: 'https://whereabouts-tales-552297569132.us-west1.run.app',
-            auth_endpoint: 'api/auth'
+            auth_endpoint: '/api/auth'
           },
           site_url: 'https://whereabouts-tales-552297569132.us-west1.run.app',
           display_url: 'https://whereabouts-tales-552297569132.us-west1.run.app',

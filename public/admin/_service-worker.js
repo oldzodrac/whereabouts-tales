@@ -1,1 +1,1 @@
-// Dummy service worker to stop the MIME type error
+// Dummy service worker to satisfy Decap CMS
