@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-gold: #D4AF37;
+  --color-brand-dark: #0A0A0A;
+  --color-brand-surface: #121212;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased;
+    background: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #0a0a0a 100%);
+    min-height: 100vh;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50;
+}
+
+/* Custom Prose Styles */
+.prose-gold {
+  --tw-prose-body: rgba(255, 255, 255, 0.7);
+  --tw-prose-headings: #ffffff;
+  --tw-prose-links: #D4AF37;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-quotes: #D4AF37;
+  --tw-prose-quote-borders: #D4AF37;
+  --tw-prose-captions: rgba(255, 255, 255, 0.5);
+  --tw-prose-code: #ffffff;
+  --tw-prose-pre-code: #ffffff;
+  --tw-prose-pre-bg: #121212;
+  --tw-prose-th-borders: rgba(255, 255, 255, 0.1);
+  --tw-prose-td-borders: rgba(255, 255, 255, 0.1);
+}
+
+.prose h1, .prose h2, .prose h3 {
+  @apply font-serif;
+}
